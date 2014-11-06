@@ -31,6 +31,16 @@ define(['component/_wishListItemComponent'], function() {
     App.Component.WishListItemComponent = App.Component._WishListItemComponent.extend({
         postInit: function()
         {
+            this.toolbarComponent.addButton({
+             name: 'publicar',
+             icon: 'glyphicon-share-alt',
+             displayName: 'Publicar',
+             show: true
+            },
+            function()
+            {
+                alert("Publicar la lista de deseos");
+            }, this);
             this.listComponent.removeAction('edit');
             this.listComponent.addAction(
             { 
